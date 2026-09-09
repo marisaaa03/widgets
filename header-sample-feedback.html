@@ -1,0 +1,65 @@
+<title>Sample Feedback Header</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,700&display=swap">
+<style>
+  :root {
+    --orange:   #EC632F;
+    --gold:     #EF9F20;
+    --charcoal: #333330;
+    --label:    #EFE9E4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    /* no padding — the bar runs edge to edge so it reads as a header strip */
+    display: flex;
+    background: transparent;
+    font-family: "Newsreader", "Lyon Text", Georgia, "Times New Roman", serif;
+  }
+
+  /* the bar fills whatever height the Notion embed is dragged to,
+     so it looks deliberate at 40px or at 120px */
+  .bar {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+    background: var(--charcoal);
+    border-radius: 8px;
+  }
+
+  /* the gradient appears once, as a mark — the same restraint as the clock card,
+     where it lands on one element rather than the whole field */
+  .tick {
+    width: 3px;
+    height: 14px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--orange) 0%, var(--gold) 100%);
+    flex: none;
+  }
+
+  .label {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--label);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="bar">
+  <span class="tick"></span>
+  <span class="label">Sample Feedback</span>
+</div>
